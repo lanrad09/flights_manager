@@ -1,0 +1,14 @@
+{% extends "flights/layout.html" %} {% block body %}
+<h1 style="text-align: center">The available Flights</h1>
+<ul>
+  {% for flight in flights %}
+  <li>
+    <!-- Put every flight inside a link that takes me to the flight route -->
+    <a href="{% url 'flights:flight' flight.id %}">
+      Flight :{{ flight.id}} {{ flight.origin }} to {{ flight.destination }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+<!-- <a href="{% url 'flights:index' %}">Back to Flight List</a> -->
+{% endblock %}
